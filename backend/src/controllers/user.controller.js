@@ -80,7 +80,7 @@ const userRegister = asyncHandler(async (req, res) => {
     coverImage: coverImage?.url || "",
     password,
     email,
-    username: username.toLowerCase(),
+    username: username.toLowerCase().trim(),
   });
 
   const createUser = await User.findById(user._id).select(
